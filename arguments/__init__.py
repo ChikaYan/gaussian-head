@@ -47,6 +47,8 @@ class ModelParams(ParamGroup):
         self.data_device = "cuda"
         self.eval = False
         self.load2gpu_on_the_fly = True
+        self.deform_sh = False
+        self.use_ex_feature = False
         super().__init__(parser, "Loading Parameters", sentinel)
 
     def extract(self, args):
@@ -67,6 +69,7 @@ class OptimizationParams(ParamGroup):
     def __init__(self, parser):
         self.iterations = 80_000
         self.warm_up = 3_000
+        self.warm_up_cnn_refinement = 10_000
         self.position_lr_init = 0.00016
         self.position_lr_final = 0.0000016
         self.position_lr_delay_mult = 0.01
@@ -90,6 +93,8 @@ class OptimizationParams(ParamGroup):
 
         self.triplane_lr = 0.001
         self.triplane_lr_max_step = 80_000
+
+        self.ex_feature_lr = 0.0025
         super().__init__(parser, "Optimization Parameters")
 
 

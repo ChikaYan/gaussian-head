@@ -1,5 +1,5 @@
-submodules\depth-diff-gaussian-rasterization
-submodules\simple-knn
+submodules/depth-diff-gaussian-rasterization
+submodules/simple-knn
 plyfile==0.8.1
 tqdm
 imageio==2.27.0
